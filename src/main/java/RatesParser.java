@@ -9,9 +9,13 @@ public class RatesParser{
         rates = ratesFileReader.getFullJSONFile();
 
     }
-    //getters
 
     private Object getJSONvalue(String key){return rates.get(key);}
 
-    public String getJSONSuccess(){return getJSONvalue("success").toString ();}
+    //getters
+    public String getJSONSuccess(){return getJSONvalue("success").toString();}
+
+    private JSONObject getRatesJSONObject(){return (JSONObject) rates.get("rates");}
+
+    public double getRate(String rateKey){return(Double) getRatesJSONObject().get(rateKey);}
 }
