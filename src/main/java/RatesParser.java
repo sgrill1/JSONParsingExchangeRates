@@ -10,12 +10,12 @@ public class RatesParser{
 
     }
 
-    private Object getJSONvalue(String key){return rates.get(key);}
-
-    //getters
-    public String getJSONSuccess(){return getJSONvalue("success").toString();}
-
+    // private Object getJSONvalue(String key){return rates.get(key);}
+    
     private JSONObject getRatesJSONObject(){return (JSONObject) rates.get("rates");}
 
+    //getters
     public double getRate(String rateKey){return(Double) getRatesJSONObject().get(rateKey);}
+    
+    public String getJSONSuccess(){return getJSONvalue("success").toString();}
 }
